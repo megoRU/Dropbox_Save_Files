@@ -25,7 +25,7 @@ public class Main {
           .collect(Collectors.toList())
           .forEach(file -> {
             try {
-              InputStream inputStream2 = new FileInputStream(DIRECTORY + file.getName());
+              InputStream inputStream2 = new FileInputStream(file.getPath());
               client.files().uploadBuilder("/" + file.getName()).uploadAndFinish(inputStream2);
             } catch (Exception e) {
               e.printStackTrace();
